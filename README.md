@@ -5,7 +5,7 @@ This reporting format is intended for laboratory-generated sample data. This can
 
 ## Quickstart Guide
   1. **Read** [instructions](instructions.md) to understand how to fill out the template.
-  2. **Review** the [terminology guide](term_guide.md) and controlled vocabularies to understand definitions and requirements of each term used in the templates.
+  2. **Review** the [terminology guide](term_guide.md) and [controlled vocabularies](controlled_vocabulary.md) to understand definitions and requirements of each term used in the templates.
   3. **Download** a blank copy of the reporting format [templates](/templates).
   4. **Save** your completed reporting format templates as a CSV file and upload to ESS-DIVE as part of your dataset.
     
