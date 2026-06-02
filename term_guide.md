@@ -57,6 +57,7 @@ Terms of the reporting format:
      - [statistic_spatial](#statistic_spatial)
      - [statistic_temporal](#statistic_temporal)
      - [representation_temporal](#representation_temporal)
+     - [notes](#notes-2)
 
 ---
 ## Sample Data File
@@ -531,3 +532,13 @@ Terms of the reporting format:
 |definition|Temporal representativeness of the measurement, if applicable. This field is only used for data dictionary rows where the column_or_row_name entry is a measured variable. In many cases, a corresponding statistic_temporal should be specified. The temporal representation will be considered instantaneous if no value is provided and datetime_measured is reported (instead of datetime_measured_start and datetime_measured_end).|
 |example|month|
 |additional guidance|The temporal representation should be used when the measurement value is not an instantaneous observation and/or represents a non-instantaneous time period. <br><br> If `datetime_measured_start` and `datetime_measured_end` are reported and a temporal representation is applicable, the temporal representation should match the temporal difference.|
+
+### notes
+|term|`notes`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|free text|
+|unit|N/A|
+|definition|Free text notes field|
+|example||
+|additional guidance|N/A|
