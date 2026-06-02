@@ -36,7 +36,13 @@ Terms of the reporting format:
      - [method_lab](#method-lab)
  
 - [**File Level Metadata File**](#file-level-metadata-file)
-     - ...
+     - [file_name](#file-name)
+     - [file_description](#file-description)
+     - [standard](#standard)
+     - [data_dictionary_file_name](#data-dictionary-file-name)
+     - [file_version](#file-version)
+     - [data_orientation](#data-orientation)
+     - [notes](#notes)
 
 - [**Data Dictionary File**](#data-dictionary-file)
      - [column_or_row_name](#column-or-row-name)
@@ -57,7 +63,7 @@ Terms of the reporting format:
 ### `sample_name`
 |term|`sample_name`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|required|
+|requirement|required|
 |format|free text|
 |unit|N/A|
 |definition|Collector's project-specific sample name, which must be unique for each sample within the dataset that you are submitting.|
@@ -67,7 +73,7 @@ Terms of the reporting format:
 ### `{measurement_column_name}`
 |term|`{measurement_column_name}`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|required|
+|requirement|required|
 |format|text; only UTF-8 characters are permitted|
 |unit|N/A|
 |definition|User-defined measurement column name. Strongly recommend to use only letters, numbers, underscores, and hyphens.|
@@ -77,7 +83,7 @@ Terms of the reporting format:
 ### `{measurement_column_name}_method_id`
 |term|`{measurement_column_name}_method_id`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|required|
+|requirement|required|
 |format|text; only UTF-8 characters are permitted; semicolon whitespace delimiter|
 |unit|N/A|
 |definition|User-defined identifier that indicates what methods were used for the individual measurement in the corresponding measurement_column_name. Strongly recommended to use only letters, numbers, underscores, and hyphens. |
@@ -87,7 +93,7 @@ Terms of the reporting format:
 ### `time_elapsed`
 |term|`time_elapsed`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|Required conditionally for time series measurements on a single sample|
+|requirement|Required conditionally for time series measurements on a single sample|
 |format|numeric|
 |unit|seconds|
 |definition|Cumulative time elapsed, to known specificity, between the first measurement and the current measurement, on a single sample.|
@@ -97,7 +103,7 @@ Terms of the reporting format:
 ### `treatment_id`
 |term|`treatment_id`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|Required conditionally for time series measurements on a single sample|
+|requirement|Required conditionally for time series measurements on a single sample|
 |format|text; only UTF-8 characters are permitted |
 |unit|N/A|
 |definition|User-defined identifier that indicates what treatment was used for manipulation experiments, if applicable. Strongly recommended that only letters, numbers, hyphens, and underscores are used.|
@@ -107,7 +113,7 @@ Terms of the reporting format:
 ### `datetime_measured`
 |term|`datetime_measured`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|datetime, ISO 8601:2019|
 |unit|N/A|
 |definition|Date and time of measurement, to known specificity.|
@@ -117,7 +123,7 @@ Terms of the reporting format:
 ### `{measurement_column_name}_flag`
 |term|`{measurement_column_name}_flag`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|text; only UTF-8 characters are permitted|
 |unit|N/A|
 |definition|User-defined identifier that indicates a flag for the individual measurement in the corresponding measurement_column_name. Strongly recommend to use only letters, numbers, underscores, and hyphens.|
@@ -127,7 +133,7 @@ Terms of the reporting format:
 ### `notes`
 |term|`notes`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Free text notes field.|
@@ -140,7 +146,7 @@ Terms of the reporting format:
 ###  `attr_id`
 |term|`attr_id`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|required|
+|requirement|required|
 |format|text; only UTF-8 characters are permitted|
 |unit|N/A|
 |definition|Attribute identifier associated with either a method ID, flag, treatment ID, or sensor ID. Strongly recommend to use only letters, numbers, underscores, and hyphens.|
@@ -150,8 +156,8 @@ Terms of the reporting format:
 ###  `attr_type`
 |term|`attr_type`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|required|
-|format|Controlled vocabulary: ATTR_TYPE|
+|requirement|required|
+|format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#attr-type)|
 |unit|N/A|
 |definition|Attribute identifier type|
 |example|method_id|
@@ -160,7 +166,7 @@ Terms of the reporting format:
 ###  `attr_description`
 |term|`attr_description`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|required|
+|requirement|required|
 |format|free text|
 |unit|N/A|
 |definition|Description of the attribute identifier provided within the attr_id field|
@@ -170,7 +176,7 @@ Terms of the reporting format:
 ###  `analysis_detection_limit`
 |term|`analysis_detection_limit`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|numeric|
 |unit|See associated measurement column unit|
 |definition|Detection limit associated with the analysis (i.e., the lowest / smallest quantity that can be measured), in the units of the reported measurement|
@@ -180,7 +186,7 @@ Terms of the reporting format:
 ###  `analysis_precision`
 |term|`analysis_precision`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|numeric|
 |unit|See associated measurement column unit|
 |definition|Precision associated with the analysis (i.e., how close repeated measures are to each other), in the units of the reported measurement|
@@ -190,7 +196,7 @@ Terms of the reporting format:
 ###  `instrument_precision`
 |term|`instrument_precision`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|numeric|
 |unit|See associated measurement column unit|
 |definition|Precision of the instrument/sensor (i.e., the smallest difference between measurements that the instrument can resolve), in the units of the reported measurement|
@@ -200,7 +206,7 @@ Terms of the reporting format:
 ###  `lower_bound`
 |term|`lower_bound`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|numeric|
 |unit|See associated measurement column unit|
 |definition|Lower bound of expected data values, in the units of the reported measurement|
@@ -210,7 +216,7 @@ Terms of the reporting format:
 ###  `upper_bound`
 |term|`upper_bound`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|numeric|
 |unit|See associated measurement column unit|
 |definition|Upper bound of expected data values, in the units of the reported measurement|
@@ -220,7 +226,7 @@ Terms of the reporting format:
 ###  `method_instrument`
 |term|`method_instrument`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Instrument specifications (e.g., type; model; manufacturer; manufacturing location)|
@@ -230,7 +236,7 @@ Terms of the reporting format:
 ###  `method_reference`
 |term|`method_reference`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Citation or link to published method description|
@@ -240,7 +246,7 @@ Terms of the reporting format:
 ###  `method_hold_time`
 |term|`method_hold_time`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Hold time for the method, including the units. Use the unit term controlled vocabulary.|
@@ -250,7 +256,7 @@ Terms of the reporting format:
 ###  `method_temp`
 |term|`method_temp`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Temperature at which method was carried out. If a temperature numeric value is entered, include units following the unit term controlled vocabulary.|
@@ -260,7 +266,7 @@ Terms of the reporting format:
 ###  `method_light`
 |term|`method_light`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Light conditions for the method|
@@ -270,7 +276,7 @@ Terms of the reporting format:
 ###  `method_atmosphere`
 |term|`method_atmosphere`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Atmosphere for the method|
@@ -280,7 +286,7 @@ Terms of the reporting format:
 ###  `method_moisture`
 |term|`method_moisture`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Moisture conditions of sample exposed to method|
@@ -290,7 +296,7 @@ Terms of the reporting format:
 ###  `method_medium`
 |term|`method_medium`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Medium used for the method (e.g. extractions; dilutions; nutrient media for incubations).|
@@ -300,7 +306,7 @@ Terms of the reporting format:
 ###  `method_time`
 |term|`method_time`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Time span for method (e.g. incubation time; storage time; extraction time)|
@@ -310,7 +316,7 @@ Terms of the reporting format:
 ###  `method_lab_contact`
 |term|`method_lab_contact`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Contact details for the laboratory where the method was performed|
@@ -320,7 +326,7 @@ Terms of the reporting format:
 ###  `method_instrument_operator`
 |term|`method_instrument_operator`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Name of the instrument operator|
@@ -330,7 +336,7 @@ Terms of the reporting format:
 ###  `method_lab`
 |term|`method_lab`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Name of the laboratory where the method was performed|
@@ -340,8 +346,68 @@ Terms of the reporting format:
 ---
 
 ## File Level Metadata File
-###  `attr_id`
+### `file_name`  
+|term|`file_name`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|required|
+|format|N/A|
+|definition|Provide the name of the associated file. File names should be unique and be as descriptive as possible about the file contents. Use only letters (e.g. CamelCase), numbers, and underscores. Do not include spaces. Hyphens allowed but not preferred. Use "\*" wildcard when the FLMD applies to multiple files. For example - the same FLMD applies to all soil core files in this data package - "soil_cores_*.csv"|
+|example|measurements.csv|
+|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-name).|
 
+### `file_description`
+|Metadata Element|`file_description`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement| required|
+|format|N/A|
+|definition|A brief description (minimum of 10 characters) of the file and what distinguishes this file from other files in the data package. Include information about the type of data (images, observations, experimental, etc.) |
+|example|Geochemistry data measurements, including anions and cations, for 2025-06-08 to 2026-01-02.|
+|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-description).|
+
+### `standard`  
+|Metadata Element|`standard`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|required|
+|format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/RF_FLMD_Standard_Terms.csv)|
+|definition|Identify if an ESS-DIVE Reporting Format or any other data or metadata standard was applied to the data file. Standard names for the ESS-DIVE reporting formats are available in the [Standard FLMD Term List](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/RF_FLMD_Standard_Terms.csv).| 
+|example|ESS-DIVE Full Sample Data Reporting Format v1|
+|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#standard).|
+
+### `data_dictionary_file_name`  
+|Metadata Element|`standard`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|required|
+|format|text; contains “_dd.csv"|
+|definition|The file name of the data dictionary that corresponds to the provided “file_name” entry. The file name must end with “_dd.csv”.| 
+|example|measurements_dd.csv|
+|additional guidance|N/A|
+
+### `file_version`  
+|Metadata Element|`file_version`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|free text|
+|definition|This is the version of the data file being described in the FLMD. The data file version is assigned by the data provider and not by the system. This would change if the data file is updated after the data package is published. Changes should be explained in the Notes field.| 
+|example|version 1|
+|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-version).|
+
+### `data_orientation` 
+|Metadata Element|`data_orientation`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|horizontal or vertical|
+|definition|Describe how the data are organized within the data matrix. Choose between "horizontal" (i.e., data are organized in rows with column headers) or "vertical" (i.e., data are organized in columns with row headers).| 
+|example|horizontal|
+|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#data-orientation).| 
+
+### Notes  
+|Metadata Element|notes|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|free text|
+|definition|Information provided would be data file specific. Details may include details on data file versioning, reporting format, software requirements, data quality, etc.| 
+|example||
+|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#notes).| 
 
 ---
 
@@ -349,7 +415,7 @@ Terms of the reporting format:
 ### `column_or_row_name`
 |term|`column_or_row_name`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|required|
+|requirement|required|
 |format|free text|
 |unit|N/A|
 |definition|Column or row name from the data file. Provide entries for each column or row name from the data matrix in the data file.|
@@ -359,7 +425,7 @@ Terms of the reporting format:
 ### `unit` 
 |term|`unit`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|required|
+|requirement|required|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#unit)|
 |unit|N/A|
 |definition|Unit of measurement.|
@@ -369,7 +435,7 @@ Terms of the reporting format:
 ### `definition
 |term|`definition|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|required|
+|requirement|required|
 |format|free text|
 |unit|N/A|
 |definition|A description of the column/row header.|
@@ -379,7 +445,7 @@ Terms of the reporting format:
 ### `measured_variable`
 |term|`measured_variable`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|required|
+|requirement|required|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#measured_variable)|
 |unit|N/A|
 |definition|The variable or property being measured. This field is only used for `{measurement_column_name}` column headers / rows.|
@@ -389,7 +455,7 @@ Terms of the reporting format:
 ### `column_or_row_long_name`
 |term|`column_or_row_long_name`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|recommended|
+|requirement|recommended|
 |format|free text|
 |unit|N/A|
 |definition|Longer human-readable column or row name. Sometimes this may be identical to Definition or even Column_or_Row_Name.|
@@ -399,7 +465,7 @@ Terms of the reporting format:
 ### `data_type`
 |term|`data_type`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#data_type)|
 |unit|N/A|
 |definition|Data type for each column|
@@ -409,7 +475,7 @@ Terms of the reporting format:
 ### `missing_value_code`
 |term|`missing_value_code`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|The missing value code used for missing measurements. Only one code allowed.|
@@ -419,7 +485,7 @@ Terms of the reporting format:
 ### `unit_basis`
 |term|`unit_basis`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|free text|
 |unit|N/A|
 |definition|Basis for how the measurement values are quantified (e.g., “as nitrate” vs. “as nitrogen”; “per kg dry sediment”). Provide if relevant.|
@@ -429,7 +495,7 @@ Terms of the reporting format:
 ### `statistic_measurement`
 |term|`statistic_measurement`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#statistic)|
 |unit|N/A|
 |definition|Statistic description, if applicable. This term is only used for {measurement_column_name} headers / rows if the measured value represents repeated observations of the same scientifically-equivalent spatial location and/or temporal period (e.g., replicates), or for general uncertainty in the measurement itself.|
@@ -439,7 +505,7 @@ Terms of the reporting format:
 ### `statistic_spatial`
 |term|`statistic_spatial`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#statistic)|
 |unit|N/A|
 |definition|Statistical description, if applicable. This term is only used for {measurement_column_name} headers / rows if the measured value represents a combination of individual observations from separate locations to represent a larger location.|
@@ -449,7 +515,7 @@ Terms of the reporting format:
 ### `statistic_temporal`
 |term|`statistic_temporal`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#statistic)|
 |unit|N/A|
 |definition|Statistic description, if applicable. This term is only used for {measurement_column_name} headers / rows if the measured value represents a combination of individual observations at different times to represent a larger time period. In most cases, a corresponding representation_temporal should be specified.|
@@ -459,7 +525,7 @@ Terms of the reporting format:
 ### `representation_temporal` 
 |term|`representation_temporal`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement level|optional|
+|requirement|optional|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#representation_temporal)|
 |unit|N/A|
 |definition|Temporal representativeness of the measurement, if applicable. This field is only used for data dictionary rows where the column_or_row_name entry is a measured variable. In many cases, a corresponding statistic_temporal should be specified. The temporal representation will be considered instantaneous if no value is provided and datetime_measured is reported (instead of datetime_measured_start and datetime_measured_end).|
