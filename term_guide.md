@@ -4,14 +4,14 @@ The  Sample Data Full Reporting Format terms are defined below, including  wheth
 
 Terms of the reporting format:
 - [**Sample Data File**](#sample-data-file)
-     - [sample_name](#sample-name)
-     - [{measurement_column_name}](#{measurement-column-name})
-     - [{measurement_column_name_method_id}](#{measurement-column-name-method-id})
-     - [time_elapsed](#time-elapsed)
-     - [treatment_id](#treatment-id)
-     - [datetime_measured](#datetime-measured)
-     - [{measurement_column_name_flag}](#{measurement-column-name-flag})
-     - [notes](#notes)
+     - [sample_name](term_guide.md#sample_name)
+     - [{measurement_column_name}](term_guide.md#{measurement-column-name})
+     - [{measurement_column_name_method_id}](term_guide.md#{measurement-column-name-method-id})
+     - [time_elapsed](term_guide.md#time-elapsed)
+     - [treatment_id](term_guide.md#treatment-id)
+     - [datetime_measured](term_guide.md#datetime-measured)
+     - [{measurement_column_name_flag}](term_guide.md#{measurement-column-name-flag})
+     - [notes](term_guide.md#notes)
  
 - [**Methods and Attributes File**](#methods-and-attributes-file)
      - [attr_id](#attr-id)
@@ -400,8 +400,8 @@ Terms of the reporting format:
 |example|horizontal|
 |additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#data-orientation).| 
 
-### Notes  
-|Metadata Element|notes|
+### `notes`  
+|Metadata Element|`notes`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|optional|
 |format|free text|
@@ -432,8 +432,8 @@ Terms of the reporting format:
 |example|degree Celsius|
 |additional guidance|Insert "N/A" when units aren't applicable. <br><br> This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/CSV_dd/csv_dd_quick_guide.md#unit).|
 
-### `definition
-|term|`definition|
+### `definition`
+|term|`definition`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|required|
 |format|free text|
