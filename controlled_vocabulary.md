@@ -21,6 +21,7 @@ Controlled vocabularies are available for the following terms:
 | treatment_id | Identifier for treatment |
 | sensor_id | Identifier for sensor |
 
+---
 ## Data Dictionary File
 ### unit
 The controlled vocabulary for the unit is based on the [Unified Code of Unified Measurements (UCUM)](https://ucum.org/ucum).
