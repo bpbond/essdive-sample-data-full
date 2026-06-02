@@ -104,7 +104,7 @@ Terms of the reporting format:
 ### treatment_id
 |term|`treatment_id`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement|Required conditionally for time series measurements on a single sample|
+|requirement|Optional|
 |format|text; only UTF-8 characters are permitted |
 |unit|N/A|
 |definition|User-defined identifier that indicates what treatment was used for manipulation experiments, if applicable. Strongly recommended that only letters, numbers, hyphens, and underscores are used.|
