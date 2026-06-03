@@ -1,13 +1,14 @@
-## Term Guide
+# Term Guide
+The  Sample Data - Full Reporting Format terms are defined below, including  whether that term is required, conditionally required, or optional, a brief definition, formatting requirements, an example, and additional guidance. Additional required terms are included in the [Location Metadata Reporting Format](https://github.com/ess-dive-workspace/essdive-location-metadata/blob/release-v2.0.0/term_guide.md) and [Sample ID and Metadata Reporting Format](https://github.com/ess-dive-workspace/essdive-sample-id-metadata/blob/release-v2.0/guide.md).
 
-The  Sample Data - Full Reporting Format terms are defined below, including  whether that term is required, conditionally required, or optional, a brief definition, formatting requirements, an example, and additional guidance. An asterisk (*) below marks fields that are required.
+An asterisk (*) below marks terms that are required. Two asterisks (**) mark fields that are conditionally required.
 
 ### Terms of the reporting format:
 [**Sample Data File**](#sample-data-file)
 - [sample_name](#sample_name)*
 - [{measurement_column_name}](#measurement_column_name)*
 - [{measurement_column_name}_method_id](#measurement_column_name_method_id)*
-- [time_elapsed](#time_elapsed)
+- [time_elapsed](#time_elapsed)**
 - [treatment_id](#treatment_id)
 - [datetime_measured](#datetime_measured)
 - [{measurement_column_name}_flag](#measurement_column_name_flag)
@@ -61,6 +62,10 @@ The  Sample Data - Full Reporting Format terms are defined below, including  whe
 - [representation_temporal](#representation_temporal)
 - [notes](#notes-2)
 
+[**Location Metadata Reporting Format Term Guide**](https://github.com/ess-dive-workspace/essdive-location-metadata/blob/release-v2.0.0/term_guide.md)
+
+[**Sample Metadata and ID Reporting Format Term Guide**](https://github.com/ess-dive-workspace/essdive-sample-id-metadata/blob/release-v2.0/guide.md)
+
 ---
 ## Sample Data File
 ### sample_name
@@ -98,7 +103,7 @@ The  Sample Data - Full Reporting Format terms are defined below, including  whe
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|Required conditionally for time series measurements on a single sample|
 |format|numeric|
-|unit|seconds|
+|unit|second|
 |definition|Cumulative time elapsed, to known specificity, between the first measurement and the current measurement, on a single sample.|
 |example|30|
 |additional guidance|Used to indicate the passage of time when taking multiple measurements through time on a single sample.|
@@ -463,7 +468,7 @@ The  Sample Data - Full Reporting Format terms are defined below, including  whe
 |unit|N/A|
 |definition|A description of the column/row header.|
 |example|Soil temperature replicate 2 at location loc_25d|
-|additional guidance|Definitions for reporting format terms must be used as is from the provided data dictionary template. For user-defined `{measurement_column_name}`, the measurement characteristics must be defined in the required fields that include measured_variable and unit. Optional fields, such as statistic, temporal representation, and unit basis, should be used to fully describe the measurement characteristics. The measurement characteristics can be repeated in the definition; however downstream resources will primarily utilize the other specific data dictionary fields.|
+|additional guidance|Definitions for reporting format terms must be used as is from the provided data dictionary template. For user-defined `{measurement_column_name}`, the measurement characteristics must be defined in the required fields that include `measured_variable` and `unit`. Optional fields, such as `statistic_*`, `representation_temporal`, and `unit_basis`, should be used to fully describe the measurement characteristics. The measurement characteristics can be repeated in the definition; however downstream resources will primarily utilize the other specific data dictionary fields.|
 
 ### measured_variable
 |term|`measured_variable`|
