@@ -84,7 +84,7 @@ The controlled vocabulary for the unit is based on the [Unified Code of Unified 
 | covariance | ISO 3534:2006-1 sample covariance: sum of products of deviations of pairs of random variables in a random sample from their sample means divided by the number of terms in the sum minus one |
 
 ### measured_variable
-Use the Consortium of Universities for the Advancement of Hydrologic Science (CUAHSI) [Variable Name controlled vocabulary](https://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=VariableNameCV&id=1157579162) for the `measured_variable` field. CHUASHI's controlled vocabulary is based upon [ODM2's variable name controlled vocabulary](http://vocabulary.odm2.org/variablename/). 
+Use the Consortium of Universities for the Advancement of Hydrologic Science (CUAHSI) [Variable Name controlled vocabulary](https://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=VariableNameCV&id=1157579162) "Term" column for the `measured_variable` field. CHUASHI's controlled vocabulary is based upon [ODM2's variable name controlled vocabulary](http://vocabulary.odm2.org/variablename/). 
 
 ### data_type
 |Controlled Vocabulary|
