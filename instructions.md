@@ -4,7 +4,7 @@
 - The Sample Data - Full Reporting Format is intended for data generated in a laboratory from physical samples This can include a set of individual samples or a time series of measurements on a single sample.
 - This reporting format (RF) provides guidance on file structure and contents for data and metadata. It includes a term guide, templates, examples, and several controlled vocabularies.
 - To be compliant with this RF, you must also adhere to the requirements in the [CSV](https://github.com/ess-dive-workspace/essdive-csv-structure), [File Level Metadata](https://github.com/ess-dive-workspace/essdive-file-level-metadata), [Location Metadata](https://github.com/ess-dive-workspace/essdive-location-metadata/tree/release-v2.0.0), and [Sample ID and Metadata](https://github.com/ess-dive-workspace/essdive-sample-id-metadata/tree/release-v2.0) Reporting Formats, as detailed below. 
-- A simpler version of this reporting format ([Lite Sample Data](https://github.com/ess-dive-workspace/essdive-sample-data-lite/tree/release-v1.0.0)) is also available for laboratory-generated sample data. 
+- A simpler version of this reporting format ([Sample Data - Lite](https://github.com/ess-dive-workspace/essdive-sample-data-lite/tree/release-v1.0.0)) is also available for laboratory-generated sample data. 
     - The Full version supports more detailed metadata and provides flexibility to describe more approaches. For example, sample tracking, named locations, non-point locations, and complex / detailed methods are supported. 
     - The Lite version supports less detailed metadata and only common approaches. For example, point locations in only WGS84 datum and high-level methods are supported;  sample tracking is not supported.
 
