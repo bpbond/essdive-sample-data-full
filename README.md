@@ -1,7 +1,7 @@
-# ESS-DIVE Reporting Format for Sample Data Full v 1.0.0
+# ESS-DIVE Reporting Format for Sample Data - Full v1.0.0
 
 ## About the reporting format
-This reporting format is intended for laboratory-generated sample data. This can include a set of individual samples or a time series of measurements on a single sample. This **Full** version supports more detailed metadata and provides flexibility to describe more approaches. For example, sample tracking, named locations, non-point locations, sensor tracking, and complex / detailed methods are supported.
+The Sample Data - Full reporting format is intended for data generated in a laboratory from physical samples. This can include a set of individual samples or a time series of measurements on a single sample. The Full version supports detailed metadata and provides flexibility to describe many methodological approaches. For example, sample tracking, named locations, non-point locations, sensor tracking, and complex / detailed methods are supported.
 
 ## Quickstart Guide
   1. **Read** [instructions](instructions.md) to understand how to fill out the template.
@@ -13,11 +13,11 @@ This reporting format is intended for laboratory-generated sample data. This can
 
 We encourage users to contribute to this reporting format. Please submit any comments or suggestions via a GitHub issue or by emailing ESS-DIVE support at ess-dive-support _at_ lbl.gov
 
-## Liscensing information
-This repository content is license for use under the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/)
+## Licensing information
+This repository content is licensed for use under the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/)
 
 ## Funding and acknowledgments
-Funding for the development of ESS-DIVE's Sample Data Full reporting format was provided by the U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research, Climate and Environmental Science Division, Data Management program under contract number DE-AC02-05CH11231.
+Funding for the development of ESS-DIVE's Sample Data - Full reporting format was provided by the U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research, Climate and Environmental Science Division, Data Management program under contract number DE-AC02-05CH11231.
 
 ## Recommended citation
 _Citation will be added upon final release of the reporting format._
