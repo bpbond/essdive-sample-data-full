@@ -1,63 +1,65 @@
 ## Term Guide
 
-The  Sample Data Full Reporting Format terms are defined below, including  whether that term is required, conditionally required, or optional, a brief definition, formatting requirements, an example, and additional guidance.
+The  Sample Data - Full Reporting Format terms are defined below, including  whether that term is required, conditionally required, or optional, a brief definition, formatting requirements, an example, and additional guidance. An asterisk (*) below marks fields that are required.
 
-Terms of the reporting format:
-- [**Sample Data File**](#sample-data-file)
-     - [sample_name](#sample_name)
-     - [{measurement_column_name}](#measurement_column_name)
-     - [{measurement_column_name_method_id}](#measurement_column_name_method_id)
-     - [time_elapsed](#time_elapsed)
-     - [treatment_id](#treatment_id)
-     - [datetime_measured](#datetime_measured)
-     - [{measurement_column_name_flag}](#measurement_column_name_flag)
-     - [notes](#notes)
+### Terms of the reporting format:
+[**Sample Data File**](#sample-data-file)
+- [sample_name](#sample_name)*
+- [{measurement_column_name}](#measurement_column_name)*
+- [{measurement_column_name}_method_id](#measurement_column_name_method_id)*
+- [time_elapsed](#time_elapsed)
+- [treatment_id](#treatment_id)
+- [datetime_measured](#datetime_measured)
+- [{measurement_column_name}_flag](#measurement_column_name_flag)
+- [notes](#notes)
  
-- [**Methods and Attributes File**](#methods-and-attributes-file)
-     - [attr_id](#attr_id)
-     - [attr_type](#attr_type)
-     - [attr_description](#attr_description)
-     - [analysis_detection_limit](#analysis_detection_limit)
-     - [analysis_precision](#analysis_precision)
-     - [instrument_precision](#instrument_precision)
-     - [lower_bound](#lower_bound)
-     - [upper_bound](#upper_bound)
-     - [method_instrument](#method_instrument)
-     - [method_reference](#method_reference)
-     - [method_hold_time](#method_hold_time)
-     - [method_temp](#method_temp)
-     - [method_light](#method_light)
-     - [method_atmosphere](#method_atmosphere)
-     - [method_moisture](#method_moisture)
-     - [method_medium](#method_medium)
-     - [method_time](#method_time)
-     - [method_lab_contact](#method_lab_contact)
-     - [method_instrument_operator](#method_instrument_operator)
-     - [method_lab](#method_lab)
+[**Methods and Attributes File**](#methods-and-attributes-file)
+- [attr_id](#attr_id)*
+- [attr_type](#attr_type)*
+- [attr_description](#attr_description)*
+- [analysis_detection_limit](#analysis_detection_limit)
+- [analysis_precision](#analysis_precision)
+- [instrument_precision](#instrument_precision)
+- [lower_bound](#lower_bound)
+- [upper_bound](#upper_bound)
+- [method_instrument](#method_instrument)
+- [method_reference](#method_reference)
+- [method_hold_time](#method_hold_time)
+- [method_temp](#method_temp)
+- [method_light](#method_light)
+- [method_atmosphere](#method_atmosphere)
+- [method_moisture](#method_moisture)
+- [method_medium](#method_medium)
+- [method_time](#method_time)
+- [method_lab_contact](#method_lab_contact)
+- [method_instrument_operator](#method_instrument_operator)
+- [method_lab](#method_lab)
  
-- [**File Level Metadata File**](#file-level-metadata-file)
-     - [file_name](#file_name)
-     - [file_description](#file_description)
-     - [standard](#standard)
-     - [data_dictionary_file_name](#data_dictionary_file_name)
-     - [file_version](#file_version)
-     - [data_orientation](#data_orientation)
-     - [notes](#notes-1)
+[**File Level Metadata File**](#file-level-metadata-file)
+- [file_name](#file_name)*
+- [file_description](#file_description)*
+- [standard](#standard)*
+- [data_dictionary_file_name](#data_dictionary_file_name)*
+- [file_version](#file_version)
+- [data_orientation](#data_orientation)
+- [header_rows](#header_rows)
+- [column_or_row_name_position](#column_or_row_name_position)
+- [notes](#notes-1)
 
-- [**Data Dictionary File**](#data-dictionary-file)
-     - [column_or_row_name](#column_or_row_name)
-     - [unit](#unit)
-     - [definition](#definition)
-     - [measured_variable](#measured_variable)
-     - [column_or_row_long_name](#column_or_row_long_name)
-     - [data_type](#data_type)
-     - [missing_value_code](#missing_value_code)
-     - [unit_basis](#unit_basis)
-     - [statistic_measurement](#statistic_measurement)
-     - [statistic_spatial](#statistic_spatial)
-     - [statistic_temporal](#statistic_temporal)
-     - [representation_temporal](#representation_temporal)
-     - [notes](#notes-2)
+[**Data Dictionary File**](#data-dictionary-file)
+- [column_or_row_name](#column_or_row_name)*
+- [unit](#unit)*
+- [definition](#definition)*
+- [measured_variable](#measured_variable)*
+- [column_or_row_long_name](#column_or_row_long_name)
+- [data_type](#data_type)
+- [missing_value_code](#missing_value_code)
+- [unit_basis](#unit_basis)
+- [statistic_measurement](#statistic_measurement)
+- [statistic_spatial](#statistic_spatial)
+- [statistic_temporal](#statistic_temporal)
+- [representation_temporal](#representation_temporal)
+- [notes](#notes-2)
 
 ---
 ## Sample Data File
@@ -79,7 +81,7 @@ Terms of the reporting format:
 |unit|N/A|
 |definition|User-defined measurement column name. Strongly recommend to use only letters, numbers, underscores, and hyphens.|
 |example|temp_soil_2|
-|additional guidance|`{measurement_column_name}` is considered arbitrary. They are not parsed for information on type of variable, unit, statistic, or temporal representation. Each `{measurement_column_name}` must be defined in the data dictionary file using the required fields that include measured_variable and unit. Optional fields, such as statistic_*, temporal representation, and unit basis, should be used to fully describe the measurement characteristics. |
+|additional guidance|`{measurement_column_name}` is considered arbitrary. They are not parsed for information on type of variable, unit, statistic, or temporal representation. Each `{measurement_column_name}` must be defined in the data dictionary file using the required fields that include `measured_variable` and `unit`. Optional fields, such as `statistic_*`, `representation_temporal`, and `unit_basis`, should be used to fully describe the measurement characteristics. |
 
 ### {measurement_column_name}_method_id
 |term|`{measurement_column_name}_method_id`|
@@ -250,7 +252,7 @@ Terms of the reporting format:
 |requirement|optional|
 |format|free text|
 |unit|N/A|
-|definition|Hold time for the method, including the units. Use the unit term controlled vocabulary.|
+|definition|Hold time for the method, including the units. Use the [unit term controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#unit).|
 |example|24 hour|
 |additional guidance|Maximum duration of time a sample could be held for a designated analysis before no longer considered viable.|
 
@@ -260,7 +262,7 @@ Terms of the reporting format:
 |requirement|optional|
 |format|free text|
 |unit|N/A|
-|definition|Temperature at which method was carried out. If a temperature numeric value is entered, include units following the unit term controlled vocabulary.|
+|definition|Temperature at which method was carried out. If a temperature numeric value is entered, include units following the [unit term controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#unit).|
 |example|72 degree Celsius|
 |additional guidance|Format can be numeric or descriptive. If numeric, use the unit term controlled vocabulary. Some descriptive examples include "ambient", "unknown", "iced", and "heated".|
 
@@ -321,7 +323,7 @@ Terms of the reporting format:
 |format|free text|
 |unit|N/A|
 |definition|Contact details for the laboratory where the method was performed|
-|example|UC Davis Analytical Lab; University of California Davis; CA-95616-5270; (530) 752-0147; anlab@ucdavis.edu|
+|example|Lawrence Berkeley National Laboratory, Berkeley CA|
 |additional guidance|Contact details for the laboratory where the method was performed (e.g. name of contact person; email; website; postal address; phone number).|
 
 ###  method_instrument_operator
@@ -357,7 +359,7 @@ Terms of the reporting format:
 |additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-name).|
 
 ### file_description
-|Metadata Element|`file_description`|
+|term|`file_description`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement| required|
 |format|N/A|
@@ -366,16 +368,16 @@ Terms of the reporting format:
 |additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-description).|
 
 ### standard
-|Metadata Element|`standard`|
+|term|`standard`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|required|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/RF_FLMD_Standard_Terms.csv)|
 |definition|Identify if an ESS-DIVE Reporting Format or any other data or metadata standard was applied to the data file. Standard names for the ESS-DIVE reporting formats are available in the [Standard FLMD Term List](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/RF_FLMD_Standard_Terms.csv).| 
-|example|ESS-DIVE Full Sample Data Reporting Format v1|
-|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#standard).|
+|example|ESS-DIVE Sample Data - Full Reporting Format v1|
+|additional guidance|For any files following the Sample Data - Full reporting format, including data, methods and attributes, and data dictionary, provide "ESS-DIVE Sample Data - Full Reporting Format v1" in the `standard` field.|
 
 ### data_dictionary_file_name
-|Metadata Element|`standard`|
+|term|`standard`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|required|
 |format|text; contains “_dd.csv"|
@@ -384,7 +386,7 @@ Terms of the reporting format:
 |additional guidance|N/A|
 
 ### file_version
-|Metadata Element|`file_version`|
+|term|`file_version`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|optional|
 |format|free text|
@@ -393,7 +395,7 @@ Terms of the reporting format:
 |additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-version).|
 
 ### data_orientation
-|Metadata Element|`data_orientation`|
+|term|`data_orientation`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|optional|
 |format|horizontal or vertical|
@@ -402,7 +404,7 @@ Terms of the reporting format:
 |additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#data-orientation).| 
 
 ### notes
-|Metadata Element|`notes`|
+|term|`notes`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|optional|
 |format|free text|
@@ -431,7 +433,7 @@ Terms of the reporting format:
 |unit|N/A|
 |definition|Unit of measurement.|
 |example|degree Celsius|
-|additional guidance|Insert "N/A" when units aren't applicable. <br><br> This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/CSV_dd/csv_dd_quick_guide.md#unit).|
+|additional guidance|Insert "N/A" when units aren't applicable.|
 
 ### definition
 |term|`definition`|
@@ -441,7 +443,7 @@ Terms of the reporting format:
 |unit|N/A|
 |definition|A description of the column/row header.|
 |example|Soil temperature replicate 2 at location loc_25d|
-|additional guidance|Definitions for reporting format terms must be used as is from the provided data dictionary template. For user-defined `{measurement_column_name}`, the measurement characteristics must be defined in the required fields that include measured_variable and unit. Optional fields, such as statistic, temporal representation, and unit basis, should be used to fully describe the measurement characteristics. The measurement characteristics can be repeated in the definition; however downstream resources will primarily utilize the other specific data dictionary fields. <br><br> This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/CSV_dd/csv_dd_quick_guide.md#definition).|
+|additional guidance|Definitions for reporting format terms must be used as is from the provided data dictionary template. For user-defined `{measurement_column_name}`, the measurement characteristics must be defined in the required fields that include measured_variable and unit. Optional fields, such as statistic, temporal representation, and unit basis, should be used to fully describe the measurement characteristics. The measurement characteristics can be repeated in the definition; however downstream resources will primarily utilize the other specific data dictionary fields.|
 
 ### measured_variable
 |term|`measured_variable`|
@@ -471,7 +473,7 @@ Terms of the reporting format:
 |unit|N/A|
 |definition|Data type for each column|
 |example|text|
-|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/CSV_dd/csv_dd_quick_guide.md#data_type)|
+|additional guidance|N/A|
 
 ### missing_value_code
 |term|`missing_value_code`|
@@ -481,7 +483,7 @@ Terms of the reporting format:
 |unit|N/A|
 |definition|The missing value code used for missing measurements. Only one code allowed.|
 |example|-9999|
-|additional guidance|Based on the CSV Reporting Format guidelines, for columns containing numeric data, ESS-DIVE recommends using "-9999" as the missing value code. For columns containing character data, ESS-DIVE recommends using "N/A" as the missing value code. If you would like to use a different missing value code, specify the used missing value code within this field. If a missing value code is not applicable for a column, leave this entry blank or use a generic missing value code. <br><br> This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/CSV_dd/csv_dd_quick_guide.md#missing_value_code|
+|additional guidance|Based on the CSV Reporting Format guidelines, for columns containing numeric data, ESS-DIVE recommends using "-9999" as the missing value code. For columns containing character data, ESS-DIVE recommends using "N/A" as the missing value code. If you would like to use a different missing value code, specify the used missing value code within this field. If a missing value code is not applicable for a column, leave this entry blank or use a generic missing value code.|
 
 ### unit_basis
 |term|`unit_basis`|
@@ -532,6 +534,26 @@ Terms of the reporting format:
 |definition|Temporal representativeness of the measurement, if applicable. This field is only used for data dictionary rows where the column_or_row_name entry is a measured variable. In many cases, a corresponding statistic_temporal should be specified. The temporal representation will be considered instantaneous if no value is provided and datetime_measured is reported (instead of datetime_measured_start and datetime_measured_end).|
 |example|month|
 |additional guidance|The temporal representation should be used when the measurement value is not an instantaneous observation and/or represents a non-instantaneous time period. <br><br> If `datetime_measured_start` and `datetime_measured_end` are reported and a temporal representation is applicable, the temporal representation should match the temporal difference.|
+
+### header_rows
+|term|`header_rows`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|numeric|
+|unit|N/A|
+|definition|Provide the total number of header rows before the start of the first data row, including the column header or row name. Do not include commented-out (i.e., column/rows that begin with a hash (#)) in the header_rows count. This field is marked as optional, but is required if any data files have more than one header row.|
+|example|1|
+|additional guidance|For files following the Sample Data - Full reporting format, the `header_rows` value should be 1.|
+
+### column_or_row_name_position
+|term|`column_or_row_name_position`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|numeric|
+|unit|N/A|
+|definition|Provide the row or column number that contains the header names. This field is not required if there are no rows or columns before the row/column names. If not included, it will be assumed that header names are in row 1 (horizontal orientation) or column 1 (vertical orientation). Do not include commented-out (i.e., column/rows that begin with a hash (#)) in the column_or_row_name_position count. |
+|example|1|
+|additional guidance|For files following the Sample Data - Full reporting format, the `column_or_row_name_position` value should be 1.|
 
 ### notes
 |term|`notes`|
