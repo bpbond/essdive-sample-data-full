@@ -1,15 +1,17 @@
 # Controlled Vocabulary for Sample Data Full Reporting Format
 Below we list the controlled vocabularies for applicable terms that can be found in ESS-DIVE's Sample Data Full reporting format templates.
 
-Controlled vocabularies are available for the following terms:
-- Methods and Attributes File
-     - [attr_type](#attr-type)
-- Data Dictionary File
-     - [unit](#unit)
-     - [representation_temporal](#representation-temporal)
-     - [statistic](#statistic)
-     - [measured_variable](#measured-variable)
-     - [data_type](#data-type)
+### Controlled vocabularies are available for the following terms:
+
+[Methods and Attributes File](#methods-and-attributes-file)
+- [attr_type](#attr_type)
+
+[Data Dictionary File](#data-dictionary-file)
+- [unit](#unit)
+- [representation_temporal](#representation_temporal)
+- [statistic](#statistic)
+- [measured_variable](#measured_variable)
+- [data_type](#data_type)
 
 ---
 ## Methods and Attributes File
@@ -74,7 +76,7 @@ The controlled vocabulary for the unit is based on the [Unified Code of Unified 
 | total | Sum or cumulative amount measured during the sampling period |
 | standard deviation | ISO 3534:2006-1 standard deviation: positive square root of the variance; or sample standard deviation: non-negative square root of the sample variance |
 | standard error | ISO 3534:2006-1 standard error: standard deviation of an estimator. An estimator of the standard error is the sample standard deviation divided by the square root of the number of samples. |
-| measurement uncertainty | JCGM 200:2012, 3rd edition https://jcg m.bipm.org/vim/en/2.26.html measurement uncertainty: non-negative parameter characterizing the dispersion of the quantity values being attributed to a measured (`measured_variable`), based on the information used |
+| measurement uncertainty | [JCGM 200:2012, 3rd edition](https://jcg m.bipm.org/vim/en/2.26.html) measurement uncertainty: non-negative parameter characterizing the dispersion of the quantity values being attributed to a measured (`measured_variable`), based on the information used |
 | R2 | Coefficient of determination |
 | RMSE | Root mean square error |
 | p-value | ISO 3534:2006-1 p-value: probability of observing the observed test statistic value or any other value at least as unfavourable to the null hypothesis |
