@@ -1,7 +1,7 @@
 # ESS-DIVE Reporting Format for Sample Data - Full v1.0.0
 
 ## About the reporting format
-The Sample Data - Full reporting format is intended for data generated in a laboratory from physical samples. This can include a set of individual samples or a time series of measurements on a single sample. The Full version supports detailed metadata and provides flexibility to describe many methodological approaches. For example, sample tracking, named locations, non-point locations, sensor tracking, and complex / detailed methods are supported.
+The Sample Data - Full Reporting Format is intended for data-generated in a laboratory from physical samples. This can include a set of individual samples or a time series of measurements on a single sample. The Full version supports detailed metadata and provides flexibility to describe many methodological approaches. For example, sample tracking, named locations, non-point locations, sensor tracking, and complex / detailed methods are supported.
 
 ## Quickstart Guide
   1. **Read** [instructions](instructions.md) to understand how to fill out the template.
