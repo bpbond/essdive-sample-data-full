@@ -1,4 +1,4 @@
-# Controlled Vocabulary for Sample Data Full Reporting Format
+# Controlled Vocabulary for Sample Data - Full Reporting Format
 Below we list the controlled vocabularies for applicable terms that can be found in ESS-DIVE's Sample Data Full reporting format templates.
 
 ### Controlled vocabularies are available for the following terms:
