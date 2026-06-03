@@ -1,4 +1,4 @@
-### Sample Data - Full Reporting Format Templates
+# Templates
 
 - [Data File Template](/templates/template_sample_full_data.csv)
 - [Methods and Attributes File Template](/templates/template_sample_attr.csv)
