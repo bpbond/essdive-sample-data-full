@@ -1,4 +1,4 @@
-# ESS-DIVE Sample Data Full Reporting Format Instructions
+# ESS-DIVE Sample Data - Full Reporting Format Instructions
 
 ## SCOPE
 - The Sample Data - Full Reporting Format is intended for data generated in a laboratory from physical samples This can include a set of individual samples or a time series of measurements on a single sample.
