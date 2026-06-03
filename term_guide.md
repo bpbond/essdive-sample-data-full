@@ -1,7 +1,7 @@
 # Term Guide
 The  Sample Data - Full Reporting Format terms are defined below, including  whether that term is required, conditionally required, or optional, a brief definition, formatting requirements, an example, and additional guidance. Additional required terms are included in the [Location Metadata Reporting Format](https://github.com/ess-dive-workspace/essdive-location-metadata/blob/release-v2.0.0/term_guide.md) and [Sample ID and Metadata Reporting Format](https://github.com/ess-dive-workspace/essdive-sample-id-metadata/blob/release-v2.0/guide.md).
 
-An asterisk (*) below marks terms that are required. Two asterisks (**) mark fields that are conditionally required.
+A single asterisk (*) below marks terms that are required. Two asterisks (**) mark fields that are conditionally required.
 
 ### Terms of the reporting format:
 [**Sample Data File**](#sample-data-file)
