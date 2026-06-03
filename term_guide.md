@@ -401,7 +401,27 @@ The  Sample Data - Full Reporting Format terms are defined below, including  whe
 |format|horizontal or vertical|
 |definition|Describe how the data are organized within the data matrix. Choose between "horizontal" (i.e., data are organized in rows with column headers) or "vertical" (i.e., data are organized in columns with row headers).| 
 |example|horizontal|
-|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#data-orientation).| 
+|additional guidance|For files following the Sample Data - Lite reporting format, the `data_orientation` value should be "horizontal".| 
+
+### header_rows
+|term|`header_rows`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|numeric|
+|unit|N/A|
+|definition|Provide the total number of header rows before the start of the first data row, including the column header or row name. Do not include commented-out (i.e., column/rows that begin with a hash (#)) in the header_rows count. This field is marked as optional, but is required if any data files have more than one header row.|
+|example|1|
+|additional guidance|For files following the Sample Data - Full reporting format, the `header_rows` value should be 1.|
+
+### column_or_row_name_position
+|term|`column_or_row_name_position`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|numeric|
+|unit|N/A|
+|definition|Provide the row or column number that contains the header names. This field is not required if there are no rows or columns before the row/column names. If not included, it will be assumed that header names are in row 1 (horizontal orientation) or column 1 (vertical orientation). Do not include commented-out (i.e., column/rows that begin with a hash (#)) in the column_or_row_name_position count. |
+|example|1|
+|additional guidance|For files following the Sample Data - Full reporting format, the `column_or_row_name_position` value should be 1.|
 
 ### notes
 |term|`notes`|
@@ -534,26 +554,6 @@ The  Sample Data - Full Reporting Format terms are defined below, including  whe
 |definition|Temporal representativeness of the measurement, if applicable. This field is only used for data dictionary rows where the column_or_row_name entry is a measured variable. In many cases, a corresponding statistic_temporal should be specified. The temporal representation will be considered instantaneous if no value is provided and datetime_measured is reported (instead of datetime_measured_start and datetime_measured_end).|
 |example|month|
 |additional guidance|The temporal representation should be used when the measurement value is not an instantaneous observation and/or represents a non-instantaneous time period. <br><br> If `datetime_measured_start` and `datetime_measured_end` are reported and a temporal representation is applicable, the temporal representation should match the temporal difference.|
-
-### header_rows
-|term|`header_rows`|
-|:----------------------------------------------------|:----------------------------------------------------|
-|requirement|optional|
-|format|numeric|
-|unit|N/A|
-|definition|Provide the total number of header rows before the start of the first data row, including the column header or row name. Do not include commented-out (i.e., column/rows that begin with a hash (#)) in the header_rows count. This field is marked as optional, but is required if any data files have more than one header row.|
-|example|1|
-|additional guidance|For files following the Sample Data - Full reporting format, the `header_rows` value should be 1.|
-
-### column_or_row_name_position
-|term|`column_or_row_name_position`|
-|:----------------------------------------------------|:----------------------------------------------------|
-|requirement|optional|
-|format|numeric|
-|unit|N/A|
-|definition|Provide the row or column number that contains the header names. This field is not required if there are no rows or columns before the row/column names. If not included, it will be assumed that header names are in row 1 (horizontal orientation) or column 1 (vertical orientation). Do not include commented-out (i.e., column/rows that begin with a hash (#)) in the column_or_row_name_position count. |
-|example|1|
-|additional guidance|For files following the Sample Data - Full reporting format, the `column_or_row_name_position` value should be 1.|
 
 ### notes
 |term|`notes`|
