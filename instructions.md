@@ -95,7 +95,7 @@
 - **Purpose:** lists and describes `file_name` to provide metadata for each file.
 - **Format:** comma-separated value (.csv)
 - **Governed by:** FLMD Reporting Format available at https://github.com/ess-dive-workspace/essdive-file-level-metadata, with required modifications detailed in this Sample Data - Full Reporting Format.
-- Use the Lite Sample Data Reporting Format template to structure FLMD files. The template includes original FLMD Reporting Format terms and extensions that build upon it. Use the Lite Sample Data Reporting Format term guide for descriptions and requirements; original FLMD terms that are not extended have links to the FLMD term guide. Extensions are marked with an asterisk below.
+- Use the Sample Data - Full Reporting Format template to structure FLMD files. The template includes original FLMD Reporting Format terms and extensions that build upon it. Use the Sample Data - Full Reporting Format term guide for descriptions and requirements; original FLMD terms that are not extended have links to the FLMD term guide. Extensions are marked with an asterisk below.
     - Required fields include:
         - `file_name`
         - `file_description`
