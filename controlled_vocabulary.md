@@ -12,6 +12,7 @@ The ESS-DIVE Sample Data - Full Reporting Format controlled vocabularies for app
 - [data_type](#data_type)
 - [statistic](#statistic)
 - [representation_temporal](#representation_temporal)
+- [material_measured](#material_measured)
 
 ---
 ## Methods and Attributes File
@@ -21,7 +22,6 @@ The ESS-DIVE Sample Data - Full Reporting Format controlled vocabularies for app
 | method_id | Identifier for method |
 | flag_id | Identifier for flag |
 | treatment_id | Identifier for treatment |
-| sensor_id | Identifier for sensor |
 
 ---
 ## Data Dictionary File
@@ -29,9 +29,10 @@ The ESS-DIVE Sample Data - Full Reporting Format controlled vocabularies for app
 The controlled vocabulary for the unit is based on the [Unified Code of Unified Measurements (UCUM)](https://ucum.org/ucum). The Definition provided for the controlled vocabulary is the UCUM code.
 |Controlled Vocabulary|Definition|
 |:----------------------------------------------------|:----------------------------------------------------|
+|unitless|unitless|
 |degree Celsius|Cel|
 |microsiemens per centimeter|uS/cm|
-|milligrams per liter|mg/L|
+|milligram per liter|mg/L|
 |percent saturation|%{saturation}|
 |pH|[pH]|
 |moles per kilogram|mol/kg|
@@ -51,7 +52,7 @@ The controlled vocabulary for the unit is based on the [Unified Code of Unified 
 |feet (international)|[ft_i]|
 
 ### measured_variable
-Use the Consortium of Universities for the Advancement of Hydrologic Science (CUAHSI) [Variable Name controlled vocabulary](https://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=VariableNameCV&id=1157579162) "Term" column for the `measured_variable` field. CHUASHI's controlled vocabulary is based upon [ODM2's variable name controlled vocabulary](http://vocabulary.odm2.org/variablename/). 
+Use the Consortium of Universities for the Advancement of Hydrologic Science (CUAHSI) [Variable Name controlled vocabulary](https://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=VariableNameCV&id=1157579162) "Term" column for the `measured_variable` field. CUAHSI's controlled vocabulary is based upon [ODM2's variable name controlled vocabulary](http://vocabulary.odm2.org/variablename/). 
 
 ### data_type
 |Controlled Vocabulary|
@@ -93,3 +94,27 @@ Use the Consortium of Universities for the Advancement of Hydrologic Science (CU
 |second|
 |hertz|
 |other|
+
+### material_measured
+|Controlled Vocabulary|Definition|
+|:-------------------------------------------------------------------------------|:----------------------------------------------------|
+| air | Specimen collection of ambient air or sensor emplaced to measure properties of ambient air. |
+| gas | Gas phase specimen or sensor emplaced to measure properties of a gas. |
+| liquid_aqueous | Specimen collected as liquid water or sensor emplaced to measure properties of water in sampled environment. |
+| liquid_organic | Specimen collected as an organic liquid. |
+| ice | Sample collected as frozen water or sensor emplaced to measure properties of ice. |
+| snow | Observation in, of or sample taken from snow. |
+| soil | Specimen collected from soil or sensor emplaced to measure properties of soil. Soil includes the mixture of minerals, organic matter, gasses, liquids, and organisms that make up the upper layer of earth in which plants grow. |
+| sediment | Specimen collected from material broken down by processes of weathering and erosion and subsequently transported by the action of wind, water, or ice, and/or by the force of gravity acting on the particles. Sensors may also be emplaced to measure sediment properties. |
+| mineral | Specimen collected as a mineral. |
+| rock | Specimen collected from a naturally occuring solid aggregate of one or more minerals. |
+| regolith | The entire unconsolidated or secondarily recemented cover that overlies more coherent bedrock, that has been formed by weathering, erosion, transport and/or deposition of the older material. The regolith thus includes fractured and weathered basement rocks, saprolites, soils, organic accumulations, volcanic material, glacial deposits, colluvium, alluvium, evaporitic sediments, aeolian deposits and ground water. Everything from fresh rock to fresh air. |
+| particulate | Specimen collected from particulates suspended in a paticulate-fluid mixture. Examples include particulates in water or air. |
+| tissue | Sample of a living organism's tissue or sensor emplaced to measure property of tissue. |
+| organism | Data collected about a species at organism level. |
+| vegetation | The plants of an area considered in general or as communities, but not taxonomically. |
+| habitat | A habitat is an ecological or environmental area that is inhabited by a particular species of animal, plant, or other type of organism. |
+| equipment | An instrument, sensor or other piece of human-made equipment upon which a measurement is made, such as datalogger temperature or battery voltage. |
+| other | Other |
+| not_applicable | There is no applicable sampled medium. |
+| unknown | The sampled medium is unknown. |
