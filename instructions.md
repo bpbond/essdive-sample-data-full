@@ -88,12 +88,13 @@
       - `missing_value_code`+
       - `unit_basis`+
       - `statistic_measurement`+
-      - `statistic_spatial`+
-      - `statistic_temporal`+
-      - `representation_temporal`+
       - `statistic_measurement_number`+
+      - `statistic_spatial`+
+      - `statistic_spatial_number`+
+      - `statistic_temporal`+
       - `statistic_temporal_number`+
       - `statistic_detail`+
+      - `representation_temporal`+
       - `notes`+
 - The data dictionary template includes definitions for the data file's required and optional terms. These definitions must be used as-is in the `definition` column when you create the data dictionaries for your data package.
 - Column/row names (`column_or_row_name`) defined in the dd cannot be repeated in the same dd.
