@@ -1,6 +1,0 @@
-column_or_row_name,unit,definition,measured_variable,column_or_row_long_name,data_type,missing_value_code,unit_basis,statistic_measurement,statistic_spatial,statistic_temporal,representation_temporal,notes
-sample_name,N/A,"Collector's project-specific sample name, which must be unique for each sample within the dataset that you are submitting.",N/A,N/A,text,,N/A,N/A,N/A,N/A,N/A,N/A
-time_elapsed,second,"Cumulative time elapsed, to known specificity, between the first measurement and the current measurement, on a single sample.",N/A,N/A,numeric,,N/A,N/A,N/A,N/A,N/A,N/A
-treatment_id,N/A,"User-defined identifier that indicates what treatment was used for manipulation experiments, if applicable. Strongly recommended that only letters, numbers, hyphens, and underscores are used.",N/A,N/A,text,,N/A,N/A,N/A,N/A,N/A,N/A
-datetime_measured,N/A,"Date and time of measurement, to known specificity.",N/A,N/A,datetime,,N/A,N/A,N/A,N/A,N/A,N/A
-notes,N/A,Free text notes field.,N/A,N/A,text,,N/A,N/A,N/A,N/A,N/A,N/A
