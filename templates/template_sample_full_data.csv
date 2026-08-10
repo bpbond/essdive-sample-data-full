@@ -1,0 +1,1 @@
+sample_name,common_method_id,common_flag,treatment_id,{measurement_column_name},{measurement_column_name}_method_id,{measurement_column_name}_flag,time_elapsed,datetime_measured,notes
