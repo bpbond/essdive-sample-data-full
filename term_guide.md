@@ -61,6 +61,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 - [data_type](#data_type)
 - [missing_value_code](#missing_value_code)
 - [unit_basis](#unit_basis)
+- [representation_temporal](#representation_temporal)
 - [statistic_measurement](#statistic_measurement)
 - [statistic_measurement_number](#statistic_measurement_number)
 - [statistic_spatial](#statistic_spatial)
@@ -68,7 +69,6 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 - [statistic_temporal](#statistic_temporal)
 - [statistic_temporal_number](#statistic_temporal_number)
 - [statistic_detail](#statistic_detail)
-- [representation_temporal](#representation_temporal)
 - [notes](#notes-2)
 
 [**Location Metadata Reporting Format Term Guide**](https://github.com/ess-dive-workspace/essdive-location-metadata/blob/release-v2.0.0/term_guide.md)
@@ -105,7 +105,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|N/A|
 |definition|User-defined identifier that indicates a flag for the entire row of data, often used for data quality flags. Strongly recommend to use only letters, numbers, underscores, and hyphens.|
 |example|temp_soil_2_flag|
-|additional guidance|Flag codes must be defined in the methods and attributes file. <br><br>If more than one flag is populated in a single cell, they should be separated by a semicolon and space. Flag codes must be defined in the methods and attributes file.|
+|additional guidance|Flag codes must be defined in the methods and attributes file. <br><br>If more than one flag is populated in a single cell, they should be separated by a semicolon and space.|
 
 ### treatment_id
 |term|`treatment_id`|
@@ -115,13 +115,13 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|N/A|
 |definition|User-defined identifier that indicates what treatment was used for manipulation experiments, if applicable. Strongly recommended that only letters, numbers, hyphens, and underscores are used.|
 |example|treatment_wet_01|
-|additional guidance|Treatment IDs should be defined within the methods and attributes file. <br><br> It is recommended that if there is no treatment but the column is present, the `treatment_id` should be “N/A”. It is recommended that if there is a control treatment, the `treatment_id` should be “control”.|
+|additional guidance|Treatment IDs should be defined within the methods and attributes file. <br><br> It is recommended that if there is no treatment but the column is present, the `treatment_id` should be “N/A”. It is recommended that if there is a control treatment, the `treatment_id` should be “control”.<br><br>If specified, the Treatment ID will be applied to all measurements in the row, i.e., Treatment IDs are designated for a sample row.|
 
 ### {measurement_column_name}
 |term|`{measurement_column_name}`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|required|
-|format|text; only letters, numbers, underscores, and hyphens in the UTF-8 character set are permitted|
+|format|text; only UTF-8 characters are permitted|
 |unit|N/A|
 |definition|User-defined measurement column name. Strongly recommend to use only letters, numbers, underscores, and hyphens.|
 |example|temp_soil_2|
@@ -133,9 +133,9 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|optional|
 |format|text; only UTF-8 characters are permitted; semicolon whitespace delimiter|
 |unit|N/A|
-|definition|User-defined identifier that indicates what methods were used for the individual measurement in the corresponding measurement_column_name. Strongly recommended to use only letters, numbers, underscores, and hyphens. |
+|definition|User-defined identifier that indicates what methods were used for the individual measurement in the corresponding `{measurement_column_name}`. Strongly recommended to use only letters, numbers, underscores, and hyphens. |
 |example|temp_soil_2_method_id|
-|additional guidance|Column header for associated `{measurement_column_name}` will be appended with “_method_id” for a method_id column. The method ID must be defined within the methods and attributes file. <br><br>If more than one method_id is populated in a single cell, they should be separated by a semicolon and space.<br><br>Method IDs specific to the measurement column are considered additional to any method IDs provided in the `common_method_id` term.|
+|additional guidance|Column header for associated `{measurement_column_name}` is appended with “_method_id” for a method_id column. The method ID must be defined within the methods and attributes file. <br><br>If more than one method_id is populated in a single cell, they should be separated by a semicolon and space.<br><br>Method IDs specific to the measurement column are considered additional to any method IDs provided in the `common_method_id` term.|
 
 ### {measurement_column_name}_flag
 |term|`{measurement_column_name}_flag`|
@@ -143,7 +143,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|optional|
 |format|text; only UTF-8 characters are permitted|
 |unit|N/A|
-|definition|User-defined identifier that indicates a flag for the individual measurement in the corresponding measurement_column_name, often used for data quality flags. Strongly recommend to use only letters, numbers, underscores, and hyphens.|
+|definition|User-defined identifier that indicates a flag for the individual measurement in the corresponding measurement_column_name. Often used for data quality flags. Strongly recommend to use only letters, numbers, underscores, and hyphens.|
 |example|temp_soil_2_flag|
 |additional guidance|Column header for associated `{measurement_column_name}` will be appended with “_flag” for a flag column. Flag codes must be defined in the methods and attributes file. <br><br>Flag codes specific to the measurement column are considered additional to any flag codes provided in the `common_flag` term.|
 
@@ -390,7 +390,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |format|N/A|
 |definition|Provide the name of the associated file. File names should be unique and be as descriptive as possible about the file contents. Use only letters (e.g. CamelCase), numbers, and underscores. Do not include spaces. Hyphens allowed but not preferred. Use "\*" wildcard when the FLMD applies to multiple files. For example - the same FLMD applies to all soil core files in this data package - "soil_cores_*.csv"|
 |example|measurements.csv|
-|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-name).|
+|additional guidance|This term is from the [File Level Metadata reporting format](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-name).|
 
 ### file_description
 |term|`file_description`|
@@ -399,7 +399,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |format|N/A|
 |definition|A brief description (minimum of 10 characters) of the file and what distinguishes this file from other files in the data package. Include information about the type of data (images, observations, experimental, etc.) |
 |example|Geochemistry data measurements, including anions and cations, for 2025-06-08 to 2026-01-02.|
-|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-description).|
+|additional guidance|This term is from the [File Level Metadata reporting format](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-description).|
 
 ### standard
 |term|`standard`|
@@ -411,11 +411,11 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |additional guidance|For any files following the Sample Data - Full reporting format, including data, methods and attributes, and data dictionary, provide "ESS-DIVE Sample Data - Full Reporting Format v1" in the `standard` field.|
 
 ### data_dictionary_file_name
-|term|`standard`|
+|term|`data_dictionary_file_name`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|required|
-|format|text; contains “_dd.csv"|
-|definition|The file name of the data dictionary that corresponds to the provided “file_name” entry. The file name must end with “_dd.csv”.| 
+|format|text; contains “dd.csv"|
+|definition|The file name of the data dictionary that corresponds to the provided “file_name” entry. The file name must end with “dd.csv”.| 
 |example|measurements_dd.csv|
 |additional guidance|N/A|
 
@@ -426,7 +426,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |format|free text|
 |definition|This is the version of the data file being described in the FLMD. The data file version is assigned by the data provider and not by the system. This would change if the data file is updated after the data package is published. Changes should be explained in the Notes field.| 
 |example|version 1|
-|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-version).|
+|additional guidance|This term is from the [File Level Metadata reporting format](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#file-version).|
 
 ### data_orientation
 |term|`data_orientation`|
@@ -464,7 +464,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |format|free text|
 |definition|Information provided would be data file specific. Details may include details on data file versioning, reporting format, software requirements, data quality, etc.| 
 |example||
-|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#notes).| 
+|additional guidance|This term is from the [File Level Metadata reporting format](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/flmd_quick_guide.md#notes).| 
 
 ---
 
@@ -477,7 +477,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|N/A|
 |definition|Column or row name from the data file. Provide entries for each column or row name from the data matrix in the data file.|
 |example|temp_soil_2|
-|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/CSV_dd/csv_dd_quick_guide.md#column-or-row-name).|
+|additional guidance|This term is from the [File Level Metadata reporting format](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/CSV_dd/csv_dd_quick_guide.md#column-or-row-name).|
 
 ### unit
 |term|`unit`|
@@ -505,7 +505,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|required|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#measured_variable)|
 |unit|N/A|
-|definition|The variable or property being measured. This field is only used for `{measurement_column_name}` column headers / rows.|
+|definition|The variable or property being measured. This field is only used for `{measurement_column_name}` column headers.|
 |example|temperature|
 |additional guidance|N/A|
 
@@ -527,7 +527,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|N/A|
 |definition|Longer human-readable column or row name. Sometimes this may be identical to Definition or even Column_or_Row_Name.|
 |example|temperature_soil_2|
-|additional guidance|This term is from the File Level Metadata reporting format, more details can be reviewed [here](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/CSV_dd/csv_dd_quick_guide.md#column-or-row-long-name)|
+|additional guidance|This term is from the [File Level Metadata reporting format](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/CSV_dd/csv_dd_quick_guide.md#column-or-row-long-name)|
 
 ### data_type
 |term|`data_type`|
@@ -559,13 +559,23 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |example|as carbon|
 |additional guidance|This information is important for the correct interpretation of the measurement value.|
 
+### representation_temporal
+|term|`representation_temporal`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#representation_temporal)|
+|unit|N/A|
+|definition|Temporal representativeness of the measurement, if applicable. This term is only used for data dictionary rows where the `column_or_row_name` entry is a measured variable. In many cases, a corresponding `statistic_temporal` should be specified. The temporal representation will be considered instantaneous if no value is provided.|
+|example|month|
+|additional guidance|The temporal representation should be used when the measurement value is not an instantaneous observation and/or represents a non-instantaneous time period.|
+
 ### statistic_measurement
 |term|`statistic_measurement`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|optional|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#statistic)|
 |unit|N/A|
-|definition|Statistic description, if applicable. This term is only used for `{measurement_column_name}` headers / rows if the measured value represents repeated observations of the same scientifically-equivalent spatial location and/or temporal period (e.g., replicates), or for general uncertainty in the measurement itself.|
+|definition|Statistic description, if applicable. This term is only used for `{measurement_column_name}` headers if the measured value represents repeated observations of the same scientifically-equivalent spatial location and/or temporal period (e.g., replicates), or for general uncertainty in the measurement itself.|
 |example|mean|
 |additional guidance|A measurement statistic typically describes variation or uncertainty in the measurement. This can be obtained / reported by an instrument or calculated via replicates. Replicates include multiple measures on the same physical sample and/or samples collected at different locations and times that are not indistinguishable for the scientific purpose. Use the spatial and / or temporal statistical descriptions, if the variability is due to multiple scientifically important locations or time periods.|
 
@@ -575,9 +585,9 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|optional|
 |format|numeric|
 |unit|N/A|
-|definition|The number of observations used to calculate the `statistic_measurement`. The observations should scientifically-equivalent in space and time.|
+|definition|The number of observations used to calculate the `statistic_measurement`. The observations should be scientifically equivalent in space and time.|
 |example|5|
-|additional guidance|Use only with `{measurement_column_name}` rows that have `statistic_measurement` specified.|
+|additional guidance|Use only with `{measurement_column_name}` that have `statistic_measurement` specified.|
 
 ### statistic_spatial
 |term|`statistic_spatial`|
@@ -585,7 +595,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|optional|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#statistic)|
 |unit|N/A|
-|definition|Statistical description, if applicable. This term is only used for `{measurement_column_name}` headers / rows if the measured value represents a combination of individual observations from separate locations to represent a larger location.|
+|definition|Statistical description, if applicable. This term is only used for `{measurement_column_name}` headers if the measured value represents a combination of individual observations from separate locations to represent a larger location.|
 |example|mean|
 |additional guidance|The spatial statistic should be used to describe measurement values that are a combination of separate spatial locations.|
 
@@ -597,7 +607,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|N/A|
 |definition|The number of observations used to calculate the `statistic_spatial`.|
 |example|5|
-|additional guidance|Use only with `{measurement_column_name}` rows that have `statistic_spatial` specified.|
+|additional guidance|Use only with `{measurement_column_name}` that have `statistic_spatial` specified.|
 
 ### statistic_temporal
 |term|`statistic_temporal`|
@@ -605,7 +615,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|optional|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#statistic)|
 |unit|N/A|
-|definition|Statistic description, if applicable. This term is only used for `{measurement_column_name}` headers / rows if the measured value represents a combination of individual observations at different times to represent a larger time period. In most cases, a corresponding representation_temporal should be specified.|
+|definition|Statistic description, if applicable. This term is only used for `{measurement_column_name}` headers if the measured value represents a combination of individual observations at different times to represent a larger time period. In most cases, a corresponding representation_temporal should be specified.|
 |example|mean|
 |additional guidance|The temporal statistic should be used when the measurement value is a combination of individual measurements made at separate times.|
 
@@ -617,7 +627,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|N/A|
 |definition|The number of observations used to calculate the `statistic_temporal`.|
 |example|5|
-|additional guidance|Use only with `{measurement_column_name}` rows that have `statistic_temporal` specified.|
+|additional guidance|Use only with `{measurement_column_name}` that have `statistic_temporal` specified.|
 
 ### statistic_detail
 |term|`statistic_detail`|
@@ -625,19 +635,9 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|optional|
 |format|free text|
 |unit|N/A|
-|definition|Additional details for interpretation of the `stastic_*` terms.|
+|definition|Additional details for interpretation of the `statistic _*` terms.|
 |example|statistic_measurement is mean of 5 biological replicates|
 |additional guidance|If the `statistic_measurement` is used, it is recommended to add details describing whether physical replicates, or repeat measurements of the same entity, or other approaches were used. Additional details may include information about how the statistic was calculated.|
-
-### representation_temporal
-|term|`representation_temporal`|
-|:----------------------------------------------------|:----------------------------------------------------|
-|requirement|optional|
-|format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#representation_temporal)|
-|unit|N/A|
-|definition|Temporal representativeness of the measurement, if applicable. This field is only used for data dictionary rows where the `column_or_row_name` entry is a measured variable. In many cases, a corresponding `statistic_temporal` should be specified. The temporal representation will be considered instantaneous if no value is provided and `datetime_measured` is reported (instead of `datetime_measured_start` and `datetime_measured_end`).|
-|example|month|
-|additional guidance|The temporal representation should be used when the measurement value is not an instantaneous observation and/or represents a non-instantaneous time period. <br><br> If `datetime_measured_start` and `datetime_measured_end` are reported and a temporal representation is applicable, the temporal representation should match the temporal difference.|
 
 ### notes
 |term|`notes`|
