@@ -67,7 +67,7 @@
         - `method_instrument_operator`
         - `method_lab`
 - The `attr_id` must be unique within the file.
-- The optional fields you choose to populate should be determined by the `attr_type` for which you are providing information. For example, `treatment_id` is unlikely to have `analysis_detection_limit`, `analysis_precision`, `instrument_precision`, etc. populated.
+- The optional terms you choose to populate should be determined by the `attr_type` for which you are providing information. For example, `treatment_id` is unlikely to have `analysis_detection_limit`, `analysis_precision`, `instrument_precision`, etc. populated.
 - The division of what is considered `method_id` versus `flag` versus `treatment_id`information is dependent upon the data and the research purpose(s). For example, a user might choose to put all methods information together in a `method_id` and not use the other `attr_type` options. A user might choose to use one `method_id` for an overall summary of the method and then further contextualize that information with a separate `method_id` for each instrument that was used.
 
 ## FILES GOVERNED BY OTHER REPORTING FORMATS
@@ -106,19 +106,19 @@
 - **Format:** comma-separated value (.csv)
 - **Governed by:** FLMD Reporting Format available at https://github.com/ess-dive-workspace/essdive-file-level-metadata, with required modifications detailed in this Sample Data - Full Reporting Format (see details below).
 - Use the Sample Data - Full Reporting Format template to structure file level metadata (FLMD) file. Name the file “`flmd.csv`” or with the suffix “`_flmd.csv`”. See the term guide for term descriptions and requirements. _Extension (new) or modified terms that build on the FLMD structure governed by the FLMD Reporting Format are marked with a plus below._
-    - Required fields include:
+    - Required terms include:
         - `file_name`
         - `file_description`
         - `standard`+
         - `data_dictionary_file_name`+
-    - Optional fields include:
+    - Optional terms include:
         - `file_version`
         - `data_orientation`
         - `header_rows`
         - `column_or_row_name_position`
         - `notes`
 - The data, methods and attributes, and data dictionary files listed in the FLMD should have “ESS-DIVE Sample Data - Full Reporting Format v1” listed in the `standard` column.
-- If you include the optional fields `data_orientation`, `header_rows`, or `column_or_row_name_position`, the reported values should be “horizontal”, “1”, and “1”, respectively, for the files following this RF.
+- If you include the optional terms `data_orientation`, `header_rows`, or `column_or_row_name_position`, the reported values should be “horizontal”, “1”, and “1”, respectively, for the files following this RF.
 
 ### LOCATIONS FILE
 - **Purpose:** lists and describes `location_id` to provide metadata for each location.
