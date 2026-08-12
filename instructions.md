@@ -74,7 +74,7 @@
 ### DATA DICTIONARY FILES
 - **Purpose:** lists and describes `column_or_row_name` to provide metadata for each column header.
 - **Format:** comma-separated value (.csv)
-- **Governed by:** File Level Metadata (FLMD) Reporting Format available at https://github.com/ess-dive-workspace/essdive-file-level-metadata, with required modifications detailed in this Sample Data - Full Reporting Format.
+- **Governed by:** [File Level Metadata (FLMD) Reporting Format](https://github.com/ess-dive-workspace/essdive-file-level-metadata) with required modifications detailed in this Sample Data - Full Reporting Format.
 - Use the Sample Data - Full Reporting Format template to structure data dictionary (DD) files. Name the file “`dd.csv`” or with the suffix “`_dd.csv`”. See the term guide for term descriptions and requirements. _Extension (new) or modified terms that build on the dd structure governed by the FLMD Reporting Format are marked with a plus below._
      - Required terms include:
           - `column_or_row_name`
@@ -104,7 +104,7 @@
 ### FILE LEVEL METADATA FILE
 - **Purpose:** lists and describes `file_name` to provide metadata for each file.
 - **Format:** comma-separated value (.csv)
-- **Governed by:** FLMD Reporting Format available at https://github.com/ess-dive-workspace/essdive-file-level-metadata, with required modifications detailed in this Sample Data - Full Reporting Format (see details below).
+- **Governed by:** [File Level Metadata (FLMD) Reporting Format](https://github.com/ess-dive-workspace/essdive-file-level-metadata) with required modifications detailed in this Sample Data - Full Reporting Format (see details below).
 - Use the Sample Data - Full Reporting Format template to structure file level metadata (FLMD) file. Name the file “`flmd.csv`” or with the suffix “`_flmd.csv`”. See the term guide for term descriptions and requirements. _Extension (new) or modified terms that build on the FLMD structure governed by the FLMD Reporting Format are marked with a plus below._
     - Required terms include:
         - `file_name`
@@ -123,14 +123,14 @@
 ### LOCATIONS FILE
 - **Purpose:** lists and describes `location_id` to provide metadata for each location.
 - **Format:** comma-separated value (.csv)
-- **Governed by:** Location Metadata Reporting Format available at https://github.com/ess-dive-workspace/essdive-location-metadata/tree/release-v2.0.0
+- **Governed by:** [Location Metadata Reporting Format](https://github.com/ess-dive-workspace/essdive-location-metadata/tree/release-v2.0.0)
 - Additional requirements:
      - There must be a `location_id` entry (row) for every `Location ID` entered on the Sample ID and Metadata RF.
 
 ### SAMPLE ID AND METADATA FILE
 - **Purpose:** lists and describes `sample_name` to provide metadata for each sample.
 - **Format:** comma-separated value (.csv)
-- **Governed by:** Sample ID and Metadata Reporting Format available at https://github.com/ess-dive-workspace/essdive-sample-id-metadata/tree/release-v2.0
+- **Governed by:** [Sample ID and Metadata Reporting Format](https://github.com/ess-dive-workspace/essdive-sample-id-metadata/tree/release-v2.0)
 - Additional requirements:
     - There must be a `Sample Name` entry (row) for every `sample_name` that is included in the data file(s).
     - `Location ID` must be provided for each sample and a corresponding entry for that `location_id` must be provided in the Location Metadata RF.
