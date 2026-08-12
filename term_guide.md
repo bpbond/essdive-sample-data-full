@@ -143,7 +143,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|optional|
 |format|text; only UTF-8 characters are permitted|
 |unit|N/A|
-|definition|User-defined identifier that indicates a flag for the individual measurement in the corresponding measurement_column_name. Often used for data quality flags. Strongly recommend to use only letters, numbers, underscores, and hyphens.|
+|definition|User-defined identifier that indicates a flag for the individual measurement in the corresponding `{measurement_column_name}`. Often used for data quality flags. Strongly recommend to use only letters, numbers, underscores, and hyphens.|
 |example|temp_soil_2_flag|
 |additional guidance|Column header for associated `{measurement_column_name}` will be appended with “_flag” for a flag column. Flag codes must be defined in the methods and attributes file. <br><br>Flag codes specific to the measurement column are considered additional to any flag codes provided in the `common_flag` term.|
 
@@ -405,8 +405,8 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |term|`standard`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|required|
-|format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/RF_FLMD_Standard_Terms.csv)|
-|definition|Identify if an ESS-DIVE Reporting Format or any other data or metadata standard was applied to the data file. Standard names for the ESS-DIVE reporting formats are available in the [Standard FLMD Term List](https://github.com/ess-dive-workspace/essdive-file-level-metadata/blob/main/RF_FLMD_Standard_Terms.csv).| 
+|format|_Controlled vocabulary to be updated once revisions are finalized._|
+|definition|Identify if an ESS-DIVE Reporting Format or any other data or metadata standard was applied to the data file.| 
 |example|ESS-DIVE Sample Data - Full Reporting Format v1|
 |additional guidance|For any files following the Sample Data - Full reporting format, including data, methods and attributes, and data dictionary, provide "ESS-DIVE Sample Data - Full Reporting Format v1" in the `standard` field.|
 
@@ -505,7 +505,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|required|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#measured_variable)|
 |unit|N/A|
-|definition|The variable or property being measured. This field is only used for `{measurement_column_name}` column headers.|
+|definition|The variable or property being measured. This term is only used for `{measurement_column_name}` column headers.|
 |example|temperature|
 |additional guidance|N/A|
 
@@ -515,7 +515,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|optional|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-sample-data-full/blob/release-v1.0.0/controlled_vocabulary.md#material_measured)|
 |unit|N/A|
-|definition|The material or medium in which the measurement was taken.|
+|definition|The material or medium in which the measurement was taken. This term is only used for `{measurement_column_name}` column headers.|
 |example|air|
 |additional guidance|N/A|
 
@@ -567,7 +567,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|N/A|
 |definition|Temporal representativeness of the measurement, if applicable. This term is only used for data dictionary rows where the `column_or_row_name` entry is a measured variable. In many cases, a corresponding `statistic_temporal` should be specified. The temporal representation will be considered instantaneous if no value is provided.|
 |example|month|
-|additional guidance|The temporal representation should be used when the measurement value is not an instantaneous observation and/or represents a non-instantaneous time period.|
+|additional guidance|The temporal representation should be used when the measurement value is not an instantaneous observation and/or represents a non-instantaneous time period. For example, if measurements are made every hour and then averaged to represent a day, the temporal representation of “day” should be used, with the corresponding temporal statistic of “mean”.|
 
 ### statistic_measurement
 |term|`statistic_measurement`|
