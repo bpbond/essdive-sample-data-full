@@ -1,12 +1,13 @@
 # Instructions
 
 ## SCOPE
-- The Sample Data - Full Reporting Format is intended for data-generated in a laboratory from physical samples. This can include a set of individual samples or a time series of measurements on a single sample.
+- The Sample Data - Full Reporting Format is intended for data generated in a laboratory from physical samples. This can include a set of individual samples or a time series of measurements on a single sample.
 - This reporting format (RF) provides guidance on file structure and contents for data and metadata. It includes a term guide, templates, examples, and several controlled vocabularies.
 - To be compliant with this RF, you must also adhere to the requirements in the [CSV](https://github.com/ess-dive-workspace/essdive-csv-structure), [File Level Metadata](https://github.com/ess-dive-workspace/essdive-file-level-metadata), [Location Metadata](https://github.com/ess-dive-workspace/essdive-location-metadata/tree/release-v2.0.0), and [Sample ID and Metadata](https://github.com/ess-dive-workspace/essdive-sample-id-metadata/tree/release-v2.0) Reporting Formats, as detailed below. 
 - A simpler version of this reporting format ([Sample Data - Lite](https://github.com/ess-dive-workspace/essdive-sample-data-lite/tree/release-v1.0.0)) is also available for laboratory-generated sample data. 
-    - This Full version supports more detailed metadata and provides flexibility to describe more approaches. For example, sample tracking, named locations, non-point locations, and complex / detailed methods are supported. 
-    - The Lite version supports less detailed metadata and only common approaches. For example, point locations in only WGS84 datum and high-level methods are supported; sample tracking is not supported.
+    - The Lite version is simpler to implement but supports only a core set of common metadata and approaches. For example, point locations in only WGS84 datum and high-level methods are supported; sample tracking is not supported.
+    - This Full version supports more detailed metadata and provides flexibility to describe more approaches. For example, sample tracking, named locations, non-point locations, and complex / detailed methods are supported.
+    - **We recommend first investigating whether the Lite version will suit your needs, and if not, using this Full version.**
 
 ## CHECKLIST FOR SUBMISSION
 - [Data file(s)](#data-files) (as many as needed)
@@ -139,6 +140,6 @@
  
 ## ADDITIONAL CONSIDERATIONS
 - You are encouraged to include raw data files, instrument specification PDFs from manufacturers, code used for data collection or data processing, and/or links to relevant content (i.e., GitHub, Zenodo). The RF does not provide specific guidance on formats of these additional files.
-- If your data type cannot use a standard data csv structure (e.g., individual spectra files per sample), populate the methods and attributes file as you would for any other data type and populate a data file template that contains the required columns. This will allow for normal mapping to the other file types for data users; however, ESS-DIVE’s internal tools may not be able to use this information. In place of the column of data, the column should point to the file or folder of data. An example is below:
+- If your data type cannot use a tabular structure suitable for a csv file, populate the methods and attributes file as you would for any other data type and populate a data file template that contains the required columns. This will allow for normal mapping to the other file types for data users; however, ESS-DIVE’s internal tools may not be able to use this information. In place of the column of data, the column should point to the file or folder of data. An example is below:
 <img width="463" height="69" alt="Screenshot 2026-06-02 at 9 48 20 AM" src="https://github.com/user-attachments/assets/977ebaed-a7fd-44b0-bd2e-6f1d0f4d232c" />
 
